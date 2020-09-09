@@ -1,0 +1,36 @@
+</wbr> <!--Quebra de palavras-->
+&shy; <!-- soft hyphen (hifen na quebra de palavra)-->
+
+<h1> Símbolos especiais</h1>
+<p>
+    &lt;
+    &gt;
+    &le;
+    &ge;
+
+    &pound;
+    &euro;
+
+    &copy;
+    &reg;
+    &trade;
+
+    rgba <!-- o a é para transparência-->
+</p>
+
+<h1>Listas</h1>
+ol -> lista ordenada
+ul -> lista desordenada(pontos)
+li -> list item
+<ol type="" start=""> Serve para organizar a lista
+
+
+No css pode usar figure.foto-legenda img {
+    width: 100%;
+    height: 100%;
+} para imagens se ajustar dinâmicamente
+
+### Table
+No td pode usar rowspan para informar que vai ter mais de uma linha
+
+a:hover por exemplo, faz algo quando coloca mouse em cima do 'a'
