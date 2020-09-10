@@ -10,6 +10,9 @@ body{
     font-family: Arial, sans-serif ;
     background-color: #dddddd;
     color: rgba(0,0,0,1); /* último dígito usando rgba 0 é transparente e 1 é opaco*/
+    position: absolute;
+    top: auto;
+    left: auto;
 }
 
 table#tabelaspec{
@@ -18,7 +21,19 @@ table#tabelaspec{
     margin-left: auto;
     margin-right: auto;
 
+}
 
+video#filme2{
+    display: block;
+    position: relative;
+    height: 195px;
+}
+
+video#filme1{
+    display: block;
+    position: relative;
+    height: 335px;
+    top: -10px;
 }
 
 table#tabelaspec td{
@@ -178,6 +193,7 @@ nav#menu ul{
     position: absolute;
     top: -20px;
     left: 300px
+    
 }
 
 nav#menu li{

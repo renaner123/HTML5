@@ -4,7 +4,7 @@ ul#album-fotos{
     width: 700px;
     margin: 0 auto;
     padding: 50px;
-    overflow: hidden;
+    overflow: hidden; /*Não sobrepôem o texto*/
     list-style: none;
 
 }
@@ -17,7 +17,7 @@ ul#album-fotos li{
     border: 5px solid #ffffff;
     background-color: #ffffff;
     box-shadow: 1px 1px 3px rgba(0,0,0,.4);
-    -webkit-transition: all 0.4s ease-in;
+    -webkit-transition: all 0.4s ease-in; /*Tempo para transição do evento*/
 
 }
 
@@ -33,7 +33,7 @@ ul#album-fotos li span{
 }
 
 ul#album-fotos li:hover{
-    -webkit-transform: scale(1.5);
+    -webkit-transform: scale(1.5); /*Usasdo para dar um zoom na imagem*/
     
 }
 
