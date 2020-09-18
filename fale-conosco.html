@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tudo sobre Google Glass</title>
     <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="_css/form.css">
 
 </head>
 
@@ -34,39 +35,90 @@
             </ul>
         </header>
 
-Fale Conosco > Contato
-Formulário de Contato
-por Gustavo Guanabara
-Atualizado em 01/Maio/2013
-
-Identificação do Usuário
-    Nome:
-    Senha:
-    E-mail:
-    Sexo:
-        - Masculino
-        - Feminino
-    Data de Nascimento:
-
-Endereço do Usuário
-    Logradouro:
-    Número:
-    Estado:
-    Cidade:
-
-Mensagem do Usuário
-    Grau de Urgência:
-    Mensagem:
-
-Quero um Google Glass
-    Gostaria de adquirir um Google Glass quando disponível
-    Cor:
-    Quantidade:
-    Preço Total: R$
 
 
-[BOTÃO ENVIAR]
+        <section id="corpo-full">
+            <article id="noticia-principal">
+                <header id="cabecalho-artigo">
+                    <hgroup>
+                        <h3>Fale Conosco > Contato</h3> <!--&nbsp; é espaço em branco-->
+                        <h1>Formulário de Contato</h1>
+                        <h2> por Gustavo Guanabara</h2>
+                        <h3 class="direta">  Atualizado em 01/Maio/2013</h3>
+                    </hgroup>
+                </header>  
 
+
+                <form method="post" id="fContato" action="mailto:contato@cursoemvideo.com" oninput="calc_total()"> <!-- Post envia um pacote, get envia na url-->
+                            <!--action envia para o email, mas precisa ter um servidor no computador, defasado.-->
+                            <!-- oninput sempre chama a função quando algo é digitado no form-->
+                <fieldset id="usuario">                        
+                        <legend>Identificação do Usuário</legend>
+                            <p> <label for=cNome>Nome:</label> <input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome completo"></p>  <!--placeholder é um dica que aparecerá-->
+                            <p><label for=cSenha>Senha:</label> <input type="password" name="tSenha" id="cSenha" size="10" maxlength="10" placeholder="8 dígitos"></p><!-- label com for usado para poder clicar no nome além do espaço-->
+                            <p><label for=cEmail>E-mail:</label> <input type="email" name="tEmail" id="cEmail"></p>
+                            <fieldset id="sexo"><legend>Sexo</legend>
+                                    <label for="masculino">Masculino</label> <input type="radio" name="sexo" id="masculino" checked> <br> <!-- Label utilizado para poder selecionar o radio também pelo nome-->
+                                    <label for="feminino">Feminino</label> <input type="radio" name="sexo" id="feminino">
+
+                            </fieldset>
+                            <p><label for=cNasc>Data de Nascimento:</label> <input type="date" name="tNasck" id="cNasc"> </p>                        
+                </fieldset>
+
+                   <fieldset id="endereco">
+                        <legend>Endereço do Usuário</legend>
+                            <p> <label for=cRua>Logradouro:</label><input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua, Av, travessa"></p>
+                            <p><label for=cNum>Número:</label> <input type="number" name="tNum" id="cNum" min="0" max="99999" size="5"> </p>
+                            <p><label for=cEstado>Estado:</label> 
+                                <select name="tEstado" id="cEstado">
+                                   <optgroup label="Região Sudeste"> <!-- Facilitar navegação -->
+                                        <option value="RJ">Rio de Janeiro</option> <!--value é o que vai ser enviado para o banco de dados-->
+                                        <option value="SP" selected>São Paulo</option>
+                                        <option value="MG" >Minas gerais</option> 
+                                   </optgroup>
+                                    <optgroup label="Região Sul">
+                                        <option value="PR" >Paraná</option>
+                                        <option value="SC" >Santa Catarina</option>
+                                        <option value="RJ" >Rio grande do Sul</option>                                  
+                                    
+                                    </optgroup>
+                                </select>
+                            
+                            </p>
+                            <p><label for=cCidade>Cidade:</label> <input type="text" name="tCidade" id="cCidade" maxlength="40" size="20" placeholder="Sua cidade" list="cidades"></p> <!-- list chama o datalist que quando usário digitar início da cidade, irá aparecer sugestões-->
+                            <datalist id="cidades">
+                                <option value="Rio de Janeiro"></option>
+                                <option value="Nova Iguaçu"></option>
+                                <option value="Niterói"></option>
+                                <option value="Belford Roxo"></option>
+                            </datalist>
+                    </fieldset>
+                    
+                    <fieldset id="mensagem">
+                        <legend>Mensagem do Usuário</legend>
+                            <p><label for=cUrg>Grau de Urgência:</label>
+                                Mín <input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2"> Máx                            </p> 
+                            <p><label for=cMsg>Mensagem:</label> <textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Deixe aqui a sua mensagem"></textarea> </p>
+                    </fieldset>
+                    
+                    <fieldset id="pedido">
+                        <legend>Quero um Google Glass</legend>
+                            <p> <input type="checkbox" name="tPed" id="cPed" checked />
+                            <label for="cPed"> Gostaria de adquirir um Google Glass quando disponível</label>  </p>
+                            <p><label for=cCor>Cor:</label>
+                            <input type="color" name="tCor" id="cCor">                                                  
+                            </p>
+
+                            <p><label for=cQuantidade>Quantidade:</label> <input type="number" name="tQuantidade" id="cQuantidade" min="1" max="10" size="5"></p>
+                            <p><label for=cPreco>Preço Total: R$</label> <input type="text" name="tPreco" id="cPreco" aria-placeholder="Total a Pagar" readonly>  </p>
+                    </fieldset>                                        
+                    
+                    <input type="image" src="_imagens/botao-enviar.png">
+
+                </form>
+
+            </article>
+        </section>
 
 <footer id="rodape"><p>Copyright 2020 - by Renan Rodolfo da Silva </br>
     <a href="http://facebook.com" target="_blank">Facebook</a> |  
